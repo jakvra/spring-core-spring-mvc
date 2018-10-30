@@ -17,4 +17,5 @@ public class CommonBeanConfig {
         StrongPasswordEncryptor encryptor = new StrongPasswordEncryptor();
         return encryptor;
     }
+
 }
