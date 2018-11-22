@@ -10,6 +10,4 @@ public interface CustomerService extends CRUDService<Customer> {
 
     Customer saveOrUpdateCustomerForm(CustomerForm customerForm);
 
-    Customer saveOrUpdateCustomerForm(CustomerForm customerForm);
-
 }
