@@ -90,6 +90,7 @@ public class SpringJPABootstrap implements ApplicationListener<ContextRefreshedE
         });
     }
 
+
     private void loadRoles() {
         Role role = new Role();
         role.setRole("CUSTOMER");

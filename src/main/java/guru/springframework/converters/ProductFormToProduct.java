@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * Created by jt on 12/24/15.
  */
 @Component
-public class ProductFormToProduct implements Converter<ProductForm, Product> {
+public class ProductFormToProduct implements Converter<ProductForm, Product>{
 
     @Override
     public Product convert(ProductForm productForm) {
@@ -21,5 +21,4 @@ public class ProductFormToProduct implements Converter<ProductForm, Product> {
         product.setImageUrl(productForm.getImageUrl());
         return product;
     }
-
 }

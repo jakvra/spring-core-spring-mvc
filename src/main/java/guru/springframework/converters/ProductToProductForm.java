@@ -10,8 +10,6 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class ProductToProductForm implements Converter<Product, ProductForm> {
-
-
     @Override
     public ProductForm convert(Product product) {
         ProductForm productForm = new ProductForm();
@@ -22,5 +20,4 @@ public class ProductToProductForm implements Converter<Product, ProductForm> {
         productForm.setImageUrl(product.getImageUrl());
         return productForm;
     }
-
 }

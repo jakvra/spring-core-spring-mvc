@@ -1,7 +1,7 @@
 package guru.springframework.converters;
 
 import guru.springframework.domain.User;
-import guru.springframework.domain.security.UserDetailsImpl;
+import guru.springframework.services.security.UserDetailsImpl;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,7 +15,6 @@ import java.util.Collection;
  */
 @Component
 public class UserToUserDetails implements Converter<User, UserDetails> {
-
     @Override
     public UserDetails convert(User user) {
         UserDetailsImpl userDetails = new UserDetailsImpl();
@@ -36,5 +35,4 @@ public class UserToUserDetails implements Converter<User, UserDetails> {
 
         return userDetails;
     }
-
 }

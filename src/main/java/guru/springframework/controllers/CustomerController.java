@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
 
+
 /**
  * Created by jt on 11/15/15.
  */
@@ -45,13 +46,13 @@ public class CustomerController {
     }
 
     @RequestMapping({"/list", "/"})
-    public String listCustomers(Model model) {
+    public String listCustomers(Model model){
         model.addAttribute("customers", customerService.listAll());
         return "customer/list";
     }
 
     @RequestMapping("/show/{id}")
-    public String showCustomer(@PathVariable Integer id, Model model) {
+    public String showCustomer(@PathVariable Integer id, Model model){
         model.addAttribute("customer", customerService.getById(id));
         return "customer/show";
     }
@@ -85,7 +86,7 @@ public class CustomerController {
     }
 
     @RequestMapping("/delete/{id}")
-    public String delete(@PathVariable Integer id) {
+    public String delete(@PathVariable Integer id){
         customerService.delete(id);
         return "redirect:/customer/list";
     }

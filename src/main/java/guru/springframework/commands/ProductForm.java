@@ -30,7 +30,6 @@ public class ProductForm {
     @URL
     private String imageUrl;
 
-
     public Integer getId() {
         return id;
     }

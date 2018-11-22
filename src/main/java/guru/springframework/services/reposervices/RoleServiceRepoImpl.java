@@ -1,7 +1,7 @@
 package guru.springframework.services.reposervices;
 
 import guru.springframework.domain.security.Role;
-import guru.springframework.repositories.RoleRepository;
+import guru.springframework.repositories.RoleRepsoitory;
 import guru.springframework.services.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
@@ -17,10 +17,10 @@ import java.util.List;
 @Profile("springdatajpa")
 public class RoleServiceRepoImpl implements RoleService {
 
-    private RoleRepository roleRepsoitory;
+    private RoleRepsoitory roleRepsoitory;
 
     @Autowired
-    public void setRoleRepsoitory(RoleRepository roleRepsoitory) {
+    public void setRoleRepsoitory(RoleRepsoitory roleRepsoitory) {
         this.roleRepsoitory = roleRepsoitory;
     }
 

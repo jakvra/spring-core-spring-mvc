@@ -160,6 +160,5 @@ public class CustomerControllerTest {
         assertEquals(email, boundCustomer.getEmail());
         assertEquals(phoneNumber, boundCustomer.getPhoneNumber());
 
-
     }
 }

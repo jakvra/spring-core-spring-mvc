@@ -28,14 +28,16 @@ public class SpringSecConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder(StrongPasswordEncryptor passwordEncryptor) {
+    public PasswordEncoder passwordEncoder(StrongPasswordEncryptor passwordEncryptor){
         PasswordEncoder passwordEncoder = new PasswordEncoder();
         passwordEncoder.setPasswordEncryptor(passwordEncryptor);
         return passwordEncoder;
     }
 
     @Bean
-    public DaoAuthenticationProvider daoAuthenticationProvider(PasswordEncoder passwordEncoder, UserDetailsService userDetailsService) {
+    public DaoAuthenticationProvider daoAuthenticationProvider(PasswordEncoder passwordEncoder,
+                                                               UserDetailsService userDetailsService){
+
         DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
         daoAuthenticationProvider.setPasswordEncoder(passwordEncoder);
         daoAuthenticationProvider.setUserDetailsService(userDetailsService);
@@ -50,7 +52,7 @@ public class SpringSecConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().ignoringAntMatchers("/h2-console").disable()
-                .authorizeRequests().antMatchers("/**/favicon.ico").permitAll()
+                .authorizeRequests().antMatchers("/**/favicon.ico") .permitAll()
                 .and().authorizeRequests().antMatchers("/product/**").permitAll()
                 .and().authorizeRequests().antMatchers("/webjars/**").permitAll()
                 .and().authorizeRequests().antMatchers("/static/css").permitAll()
@@ -60,5 +62,4 @@ public class SpringSecConfig extends WebSecurityConfigurerAdapter {
                 .and().authorizeRequests().antMatchers("/user/**").hasAnyAuthority("ADMIN")
                 .and().exceptionHandling().accessDeniedPage("/access_denied");
     }
-
 }

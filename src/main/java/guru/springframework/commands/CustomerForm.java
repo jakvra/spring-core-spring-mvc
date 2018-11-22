@@ -9,7 +9,6 @@ import javax.validation.constraints.Size;
  * Created by jt on 12/22/15.
  */
 public class CustomerForm {
-
     private Integer userId;
     private Integer userVersion;
     private Integer customerId;
