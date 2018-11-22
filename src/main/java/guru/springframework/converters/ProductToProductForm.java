@@ -5,6 +5,9 @@ import guru.springframework.domain.Product;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
+/**
+ * Created by jt on 12/24/15.
+ */
 @Component
 public class ProductToProductForm implements Converter<Product, ProductForm> {
 

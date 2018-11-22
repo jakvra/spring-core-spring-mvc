@@ -9,6 +9,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
+/**
+ * Created by jt on 12/24/15.
+ */
 public class ProductForm {
 
     private Integer id;
